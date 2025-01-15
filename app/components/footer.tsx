@@ -19,7 +19,7 @@ export function Footer() {
             <p className="text-lg font-semibold mb-4">
               تواصل معنا من جميع انحاء العالم عبر واتساب: <span className="text-xl font-bold text-green-400">+ 201062577690</span>
             </p>
-            <div className="flex space-x-4 mb-4">
+            <div className="flex" style={{ gap: '1.8rem' }}> {/* زيادة المسافة بين الأيقونتين */} 
               <a
                 href="https://wa.me/201062577690"
                 target="_blank"
