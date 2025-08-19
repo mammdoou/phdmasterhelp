@@ -8,14 +8,6 @@ const amiri = Amiri({
   variable: "--font-amiri",
 });
 
-export const metadata = {
-  title: "My App",
-  description: "Arabic layout using Amiri font",
-  verification: {
-    google: "msHd4AwcWHg75vSVWEzVXpu5-0NPFWOquLSa75_6_F8",
-  },
-};
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ar" dir="rtl">
