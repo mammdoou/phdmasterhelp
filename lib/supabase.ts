@@ -1,22 +1,20 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-// التحقق من أن المتغيرات البيئية موجودة
+export type Contact = {
+  name: string;
+  whatsapp: string;
+  message: string;
+};
+
+// التحقق من المتغيرات البيئية عند الاستخدام فقط، حتى لا يتعطل بناء الموقع إذا لم تكن مضبوطة
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-// إذا كانت المتغيرات البيئية مفقودة، إطلاق خطأ مع رسالة واضحة
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Environment variables NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are required.');
-}
+let client: SupabaseClient | null = null;
 
-// إنشاء عميل Supabase
-let supabase: SupabaseClient;
-try {
-  supabase = createClient(supabaseUrl, supabaseAnonKey);
-} catch (error) {
-  console.error('Failed to initialize Supabase client:', error);
-  throw new Error('Supabase client initialization failed.');
+/** يعيد عميل Supabase، أو null إذا كانت المتغيرات البيئية غير موجودة */
+export function getSupabase(): SupabaseClient | null {
+  if (!supabaseUrl || !supabaseAnonKey) return null;
+  if (!client) client = createClient(supabaseUrl, supabaseAnonKey);
+  return client;
 }
-
-// تصدير العميل للاستخدام في باقي المشروع
-export { supabase };
