@@ -96,7 +96,7 @@ export function ContactForm() {
                 <div>
                   <Textarea
                     name="message"
-                    placeholder="اكتب تفاصيل طلبك هنا: نوع الخدمة، التخصص، الموعد المطلوب..."
+                    placeholder="اكتب تفاصيل طلبك هنا (اقتراحات فقط: نوع الخدمة، التخصص، الموعد المطلوب...)"
                     required
                     className="text-right rounded-xl border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 min-h-[140px]"
                     rows={5}
