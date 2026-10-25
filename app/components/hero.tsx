@@ -70,14 +70,13 @@ export function Hero() {
               تواصل معنا على واتساب
             </Button>
             <Button 
-              variant="outline"
-              className="gap-2 text-lg border-white/20 text-white hover:bg-white/10 px-8 py-6 rounded-xl transition-all duration-300"
+              className="gap-2 text-lg bg-white hover:bg-gray-100 text-gray-900 font-bold px-8 py-6 rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               size="lg"
               onClick={useCallback(() => {
                 document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
               }, [])}
             >
-              <BookOpen className="h-5 w-5" />
+              <BookOpen className="h-5 w-5 text-blue-600" />
               تعرف على خدماتنا
             </Button>
           </div>
