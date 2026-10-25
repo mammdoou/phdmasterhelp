@@ -38,8 +38,8 @@ export function ContactForm() {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
 
     toast({
-      title: "تم تجهيز رسالتك",
-      description: "اضغط إرسال في واتساب لإتمام الطلب، وسنرد عليك في أقرب وقت",
+      title: "تم إرسال طلبك بنجاح",
+      description: "سنتواصل معك في أقرب وقت ممكن",
     })
     form.reset()
     setIsSubmitting(false)
@@ -115,7 +115,7 @@ export function ContactForm() {
                   ) : (
                     <span className="flex items-center gap-2">
                       <Send className="h-5 w-5" />
-                      إرسال الطلب عبر واتساب
+                      إرسال الطلب
                     </span>
                   )}
                 </Button>
